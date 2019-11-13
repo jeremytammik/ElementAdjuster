@@ -38,6 +38,7 @@ using System.Runtime.InteropServices;
 // 2019-11-12 conception
 // 2019-11-13 2020.0.0.0 initial skeleton app
 // 2019-11-13 2020.0.0.0 implemented element selection
+// 2019-11-13 2020.0.0.0 implemented stream writer output
 //
 [assembly: AssemblyVersion( "2020.0.0.0" )]
 [assembly: AssemblyFileVersion( "2020.0.0.0" )]
