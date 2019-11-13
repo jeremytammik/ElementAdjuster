@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using Autodesk.Revit.ApplicationServices;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
@@ -11,7 +12,7 @@ using Autodesk.Revit.UI.Selection;
 
 namespace ElementAdjuster
 {
-  [Transaction( TransactionMode.Manual )]
+  [Transaction( TransactionMode.ReadOnly )]
   public class Command : IExternalCommand
   {
     public Result Execute(
@@ -23,34 +24,33 @@ namespace ElementAdjuster
       UIDocument uidoc = uiapp.ActiveUIDocument;
       Application app = uiapp.Application;
       Document doc = uidoc.Document;
-
-      // Access current selection
-
       Selection sel = uidoc.Selection;
 
-      // Retrieve elements from database
+      List<ElementId> ids = new List<ElementId>( 
+        sel.GetElementIds() );
 
-      FilteredElementCollector col
-        = new FilteredElementCollector( doc )
-          .WhereElementIsNotElementType()
-          .OfCategory( BuiltInCategory.INVALID )
-          .OfClass( typeof( Wall ) );
-
-      // Filtered element collector is iterable
-
-      foreach( Element e in col )
+      if( 0 == ids.Count )
       {
-        Debug.Print( e.Name );
+        try
+        {
+          IList<Reference> refs = sel.PickObjects( 
+            ObjectType.Element, 
+            "Please select adjusted elements to export" );
+
+          ids = new List<ElementId>(
+            refs.Select<Reference, ElementId>(
+              r => r.ElementId ) );
+        }
+        catch(Autodesk.Revit.Exceptions.OperationCanceledException)
+        {
+          return Result.Cancelled;
+        }
       }
 
-      // Modify document within a transaction
-
-      using( Transaction tx = new Transaction( doc ) )
+      foreach(ElementId id in ids)
       {
-        tx.Start( "Transaction Name" );
-        tx.Commit();
-      }
 
+      }
       return Result.Succeeded;
     }
   }

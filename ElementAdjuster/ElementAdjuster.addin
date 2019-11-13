@@ -9,12 +9,4 @@
     <VendorId>com.typepad.thebuildingcoder</VendorId>
     <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
   </AddIn>
-  <AddIn Type="Application">
-    <Name>Application ElementAdjuster</Name>
-    <Assembly>ElementAdjuster.dll</Assembly>
-    <FullClassName>ElementAdjuster.App</FullClassName>
-    <ClientId>f1aa5eed-de27-4e0c-850e-8e86affd4539</ClientId>
-    <VendorId>com.typepad.thebuildingcoder</VendorId>
-    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
-  </AddIn>
 </RevitAddIns>

@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle( "ElementAdjuster" )]
-[assembly: AssemblyDescription( "Revit Add-In Description for ElementAdjuster" )]
+[assembly: AssemblyDescription( "Revit C# .NET add-in to apply slight adjustment to `Element` instance location" )]
 [assembly: AssemblyConfiguration( "" )]
-[assembly: AssemblyCompany( "Autodesk Inc." )]
+[assembly: AssemblyCompany( "Jeremy Tammik, The Building Coder" )]
 [assembly: AssemblyProduct( "ElementAdjuster Revit C# .NET Add-In" )]
-[assembly: AssemblyCopyright( "Copyright 2019 (C) Jeremy Tammik, Autodesk Inc." )]
+[assembly: AssemblyCopyright( "Copyright 2019 (C) Jeremy Tammik" )]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]
 
@@ -32,5 +32,13 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
+//
+// History:
+//
+// 2019-11-12 conception
+// 2019-11-13 2020.0.0.0 initial skeleton app
+// 2019-11-13 2020.0.0.0 implemented element selection
+//
 [assembly: AssemblyVersion( "2020.0.0.0" )]
 [assembly: AssemblyFileVersion( "2020.0.0.0" )]
+
