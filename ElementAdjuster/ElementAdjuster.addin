@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command ElementAdjuster</Text>
+    <Description>Some description for ElementAdjuster</Description>
+    <Assembly>ElementAdjuster.dll</Assembly>
+    <FullClassName>ElementAdjuster.Command</FullClassName>
+    <ClientId>9285fb50-732d-4afb-af36-8bb2ee4e6bba</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application ElementAdjuster</Name>
+    <Assembly>ElementAdjuster.dll</Assembly>
+    <FullClassName>ElementAdjuster.App</FullClassName>
+    <ClientId>f1aa5eed-de27-4e0c-850e-8e86affd4539</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>
