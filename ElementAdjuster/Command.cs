@@ -1,7 +1,5 @@
 #region Namespaces
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Autodesk.Revit.ApplicationServices;
@@ -43,6 +41,7 @@ namespace ElementAdjuster
         {
           IList<Reference> refs = sel.PickObjects(
             ObjectType.Element,
+            new LocationPointSelectionFilter(),
             "Please select adjusted elements to export" );
 
           ids = new List<ElementId>(
