@@ -4,7 +4,7 @@
     <Text>Element Adjustment Export</Text>
     <Description>Export the selected element adjustments</Description>
     <Assembly>ElementAdjuster.dll</Assembly>
-    <FullClassName>ElementAdjuster.Command</FullClassName>
+    <FullClassName>ElementAdjuster.CmdExport</FullClassName>
     <ClientId>9285fb50-732d-4afb-af36-8bb2ee4e6bba</ClientId>
     <VendorId>com.typepad.thebuildingcoder</VendorId>
     <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
@@ -13,7 +13,7 @@
     <Text>Element Adjustment Import</Text>
     <Description>Import and apply the selected element adjustments</Description>
     <Assembly>ElementAdjuster.dll</Assembly>
-    <FullClassName>ElementAdjuster.Command</FullClassName>
+    <FullClassName>ElementAdjuster.CmdImport</FullClassName>
     <ClientId>b29fe624-bf6b-467a-8257-28366ccbee8a</ClientId>
     <VendorId>com.typepad.thebuildingcoder</VendorId>
     <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>

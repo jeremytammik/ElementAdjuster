@@ -52,7 +52,8 @@
     <Reference Include="System.Web.Extensions" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command.cs" />
+    <Compile Include="CmdImport.cs" />
+    <Compile Include="CmdExport.cs" />
     <Compile Include="ElementAdjustmentData.cs" />
     <Compile Include="LocationPointSelectionFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -14,7 +14,7 @@ using PickObjectsCanceled = Autodesk.Revit.Exceptions.OperationCanceledException
 namespace ElementAdjuster
 {
   [Transaction( TransactionMode.ReadOnly )]
-  public class Command : IExternalCommand
+  public class CmdExport : IExternalCommand
   {
     /// <summary>
     /// JSON output file path
