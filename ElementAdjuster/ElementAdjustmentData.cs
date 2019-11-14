@@ -18,6 +18,11 @@ namespace ElementAdjuster
     //public int HostElementId;
     //public string HostElementUniqueId;
 
+    public ElementAdjustmentData()
+    {
+      Id = -1;
+    }
+
     public ElementAdjustmentData( Element e )
     {
       Location loc = e.Location;
