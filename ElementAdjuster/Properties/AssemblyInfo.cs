@@ -40,6 +40,7 @@ using System.Runtime.InteropServices;
 // 2019-11-13 2020.0.0.0 implemented element selection
 // 2019-11-13 2020.0.0.0 implemented stream writer output
 // 2019-11-13 2020.0.0.0 implemented LocationPointSelectionFilter
+// 2019-11-14 2020.0.0.0 implemented ElementAdjustmentData
 //
 [assembly: AssemblyVersion( "2020.0.0.0" )]
 [assembly: AssemblyFileVersion( "2020.0.0.0" )]

@@ -54,25 +54,31 @@ namespace ElementAdjuster
         }
       }
 
+      Dictionary<int, ElementAdjustmentData> d 
+        = new Dictionary<int, ElementAdjustmentData>( 
+          ids.Count );
+
+      foreach( ElementId id in ids )
+      {
+        d.Add( id.IntegerValue, new ElementAdjustmentData( id ) );
+        Element e = doc.GetElement( id );
+
+        // id
+        // unique id
+        // x, y, z coordinates
+        // direction facing
+        // element type
+        // host element
+
+        s.WriteLine(
+        "{{\"name\":\"{0}\", \"id\":\"{1}\", "
+        + "\"uid\":\"{2}\", \"svg_path\":\"{3}\"}}",
+        e.Name, e.Id, e.UniqueId );
+      }
+
       using( StreamWriter s = new StreamWriter( 
         _filepath, true ) )
       {
-        foreach( ElementId id in ids )
-        {
-          Element e = doc.GetElement( id );
-
-          // id
-          // unique id
-          // x, y, z coordinates
-          // direction facing
-          // element type
-          // host element
-
-          s.WriteLine(
-          "{{\"name\":\"{0}\", \"id\":\"{1}\", "
-          + "\"uid\":\"{2}\", \"svg_path\":\"{3}\"}}",
-          e.Name, e.Id, e.UniqueId );
-        }
         s.Close();
       }
       return Result.Succeeded;
