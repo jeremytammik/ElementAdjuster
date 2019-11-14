@@ -47,7 +47,8 @@ using System.Runtime.InteropServices;
 // 2019-11-14 2020.0.0.0 successful export test
 // 2019-11-14 2020.0.0.1 implemented CmdImport
 // 2019-11-14 2020.0.0.1 successfully tested CmdImport
+// 2019-11-14 2020.0.0.2 implemented HasValidLocationPoint
 //
-[assembly: AssemblyVersion( "2020.0.0.1" )]
-[assembly: AssemblyFileVersion( "2020.0.0.1" )]
+[assembly: AssemblyVersion( "2020.0.0.2" )]
+[assembly: AssemblyFileVersion( "2020.0.0.2" )]
 

@@ -34,7 +34,8 @@ namespace ElementAdjuster
       Selection sel = uidoc.Selection;
 
       List<ElementId> ids = new List<ElementId>(
-        sel.GetElementIds() );
+        sel.GetElementIds().Where<ElementId>( 
+          id => HasValidLocationPoint( id ) );
 
       if( 0 == ids.Count )
       {
