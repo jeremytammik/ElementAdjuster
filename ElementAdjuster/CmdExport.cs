@@ -34,8 +34,10 @@ namespace ElementAdjuster
       Selection sel = uidoc.Selection;
 
       List<ElementId> ids = new List<ElementId>(
-        sel.GetElementIds().Where<ElementId>( 
-          id => HasValidLocationPoint( id ) );
+        sel.GetElementIds().Where<ElementId>(
+          id => LocationPointSelectionFilter
+            .HasValidLocationPoint( doc.GetElement( 
+              id ) ) ) );
 
       if( 0 == ids.Count )
       {
@@ -79,6 +81,8 @@ namespace ElementAdjuster
 
       List<string> lines = new List<string>( n );
 
+      n = 0;
+
       foreach( ElementId id in ids )
       {
         int i = id.IntegerValue;
@@ -97,12 +101,18 @@ namespace ElementAdjuster
         //}
 
         lines.Add( serializer.Serialize( data ) );
+        ++n;
       }
 
       //File.WriteAllText( _filepath,
       //  serializer.Serialize( d ) );
 
       File.AppendAllLines( FilePath, lines );
+
+      TaskDialog.Show( "ElementAdjuster", 
+        string.Format( "{0} line{1} of element "
+          + "adjustment data added to '{2}.", 
+          n, 1 == n ? "" : "s", FilePath ) );
 
       return Result.Succeeded;
     }

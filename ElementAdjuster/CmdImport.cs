@@ -69,6 +69,11 @@ namespace ElementAdjuster
           t.Commit();
         }
       }
+
+      TaskDialog.Show( "ElementAdjuster", string.Format( 
+        "{0} element location{1} modified.",
+          n, 1 == n ? "" : "s" ) );
+
       return Result.Succeeded;
     }
   }

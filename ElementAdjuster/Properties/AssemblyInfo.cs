@@ -48,6 +48,8 @@ using System.Runtime.InteropServices;
 // 2019-11-14 2020.0.0.1 implemented CmdImport
 // 2019-11-14 2020.0.0.1 successfully tested CmdImport
 // 2019-11-14 2020.0.0.2 implemented HasValidLocationPoint
+// 2019-11-14 2020.0.0.2 added check for valid LocationPoint to preselected elements
+// 2019-11-14 2020.0.0.2 added report of number of adjustments exported and elements modified
 //
 [assembly: AssemblyVersion( "2020.0.0.2" )]
 [assembly: AssemblyFileVersion( "2020.0.0.2" )]
