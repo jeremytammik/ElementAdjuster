@@ -37,7 +37,7 @@ If it lives in a linked model, the changes should be exported from there and app
 
 Currently, ElementAdjuster only supports adjustment of elements that have a valid `Location` with a `LocationPoint` value.
 
-ElementAdjuster implementes two external commands:
+ElementAdjuster implements two external commands:
 
 - [CmdExport](#CmdExport)
 - [CmdImport](#CmdImport)
