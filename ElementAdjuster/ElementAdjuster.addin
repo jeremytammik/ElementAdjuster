@@ -9,4 +9,13 @@
     <VendorId>com.typepad.thebuildingcoder</VendorId>
     <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
   </AddIn>
+  <AddIn Type="Command">
+    <Text>Element Adjustment Import</Text>
+    <Description>Import and apply the selected element adjustments</Description>
+    <Assembly>ElementAdjuster.dll</Assembly>
+    <FullClassName>ElementAdjuster.Command</FullClassName>
+    <ClientId>b29fe624-bf6b-467a-8257-28366ccbee8a</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+  </AddIn>
 </RevitAddIns>
