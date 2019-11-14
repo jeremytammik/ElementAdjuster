@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Web.Script.Serialization;
 using Autodesk.Revit.ApplicationServices;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
@@ -54,34 +55,44 @@ namespace ElementAdjuster
         }
       }
 
-      Dictionary<int, ElementAdjustmentData> d 
-        = new Dictionary<int, ElementAdjustmentData>( 
+      Dictionary<int, ElementAdjustmentData> d
+        = new Dictionary<int, ElementAdjustmentData>(
           ids.Count );
+
+      // Maybe previous data already exists?
+      // If so, read it it first.
+
+      JavaScriptSerializer serializer
+        = new JavaScriptSerializer();
+
+      if(File.Exists(_filepath))
+      {
+        d = serializer
+          .Deserialize<Dictionary<int, ElementAdjustmentData>>( 
+            File.ReadAllText( _filepath ) );
+      }
 
       foreach( ElementId id in ids )
       {
-        d.Add( id.IntegerValue, 
-          new ElementAdjustmentData( 
-            doc.GetElement( id ) ) );
+        int i = id.IntegerValue;
 
-        // id
-        // unique id
-        // x, y, z coordinates
-        // direction facing
-        // element type
-        // host element
+        ElementAdjustmentData data
+          = new ElementAdjustmentData(
+            doc.GetElement( id ) );
 
-        s.WriteLine(
-        "{{\"name\":\"{0}\", \"id\":\"{1}\", "
-        + "\"uid\":\"{2}\", \"svg_path\":\"{3}\"}}",
-        e.Name, e.Id, e.UniqueId );
+        if( d.ContainsKey( i ) )
+        {
+          d[ i ] = data;
+        }
+        else
+        {
+          d.Add( id.IntegerValue, data );
+        }
       }
 
-      using( StreamWriter s = new StreamWriter( 
-        _filepath, true ) )
-      {
-        s.Close();
-      }
+      File.WriteAllText( _filepath, 
+        serializer.Serialize( d ) );
+
       return Result.Succeeded;
     }
   }
