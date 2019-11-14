@@ -60,8 +60,9 @@ namespace ElementAdjuster
 
       foreach( ElementId id in ids )
       {
-        d.Add( id.IntegerValue, new ElementAdjustmentData( id ) );
-        Element e = doc.GetElement( id );
+        d.Add( id.IntegerValue, 
+          new ElementAdjustmentData( 
+            doc.GetElement( id ) ) );
 
         // id
         // unique id
