@@ -19,7 +19,7 @@ namespace ElementAdjuster
     /// <summary>
     /// JSON output file path
     /// </summary>
-    const string _filepath
+    public const string FilePath
       = "C:/tmp/exported_element_info.json";
 
     public Result Execute(
@@ -101,7 +101,7 @@ namespace ElementAdjuster
       //File.WriteAllText( _filepath,
       //  serializer.Serialize( d ) );
 
-      File.AppendAllLines( _filepath, lines );
+      File.AppendAllLines( FilePath, lines );
 
       return Result.Succeeded;
     }
