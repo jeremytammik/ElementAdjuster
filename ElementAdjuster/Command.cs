@@ -55,22 +55,28 @@ namespace ElementAdjuster
         }
       }
 
-      Dictionary<int, ElementAdjustmentData> d
-        = new Dictionary<int, ElementAdjustmentData>(
-          ids.Count );
-
-      // Maybe previous data already exists?
-      // If so, read it it first.
-
       JavaScriptSerializer serializer
         = new JavaScriptSerializer();
 
-      if(File.Exists(_filepath))
-      {
-        d = serializer
-          .Deserialize<Dictionary<int, ElementAdjustmentData>>( 
-            File.ReadAllText( _filepath ) );
-      }
+      //Dictionary<int, ElementAdjustmentData> d
+      //  = new Dictionary<int, ElementAdjustmentData>(
+      //    ids.Count );
+      //
+      // Maybe previous data already exists?
+      // If so, read it it first.
+      // No, use append instead, and write individual 
+      // dictionary records instead of the whole thing.
+      //
+      //if( File.Exists( _filepath ) )
+      //{
+      //  d = serializer
+      //    .Deserialize<Dictionary<int, ElementAdjustmentData>>(
+      //      File.ReadAllText( _filepath ) );
+      //}
+
+      int n = ids.Count;
+
+      List<string> lines = new List<string>( n );
 
       foreach( ElementId id in ids )
       {
@@ -80,18 +86,22 @@ namespace ElementAdjuster
           = new ElementAdjustmentData(
             doc.GetElement( id ) );
 
-        if( d.ContainsKey( i ) )
-        {
-          d[ i ] = data;
-        }
-        else
-        {
-          d.Add( id.IntegerValue, data );
-        }
+        //if( d.ContainsKey( i ) )
+        //{
+        //  d[ i ] = data;
+        //}
+        //else
+        //{
+        //  d.Add( id.IntegerValue, data );
+        //}
+
+        lines.Add( serializer.Serialize( data ) );
       }
 
-      File.WriteAllText( _filepath, 
-        serializer.Serialize( d ) );
+      //File.WriteAllText( _filepath,
+      //  serializer.Serialize( d ) );
+
+      File.AppendAllLines( _filepath, lines );
 
       return Result.Succeeded;
     }

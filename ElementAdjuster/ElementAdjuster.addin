@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RevitAddIns>
   <AddIn Type="Command">
-    <Text>Command ElementAdjuster</Text>
-    <Description>Some description for ElementAdjuster</Description>
+    <Text>Element Adjustment Export</Text>
+    <Description>Export the selected element adjustments</Description>
     <Assembly>ElementAdjuster.dll</Assembly>
     <FullClassName>ElementAdjuster.Command</FullClassName>
     <ClientId>9285fb50-732d-4afb-af36-8bb2ee4e6bba</ClientId>
