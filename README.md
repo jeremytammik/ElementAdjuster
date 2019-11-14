@@ -35,6 +35,26 @@ Re. linked model support:
 I assume the modified element lives in the main project, not in a linked model.
 If it lives in a linked model, the changes should be exported from there and applied there as well.
 
+Currently, ElementAdjuster only supports adjustment of elements that have a valid `Location` with a `LocationPoint` value.
+
+ElementAdjuster implementes two external commands:
+
+- [CmdExport](#CmdExport)
+- [CmdImport](#CmdImport)
+
+## <a name="CmdExport"></a> CmdExport
+
+CmdExport exports the adjustment data listed above for a set of elements to the hard-coded JSON file path specified above.
+
+They can be pre-selected before launching the command.
+
+If no elements have been preselected, the command prompts the user to select them.
+
+Elements that have no valid `LocationPoint` are ignored.
+
+## <a name="CmdImport"></a> CmdImport
+
+CmdImport imports and applies the adjustment data for a set of elements from the hard-coded JSON file path specified above and reports the number of adjusted elements.
 
 
 ## Author
