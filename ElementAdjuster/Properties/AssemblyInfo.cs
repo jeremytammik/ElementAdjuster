@@ -50,6 +50,7 @@ using System.Runtime.InteropServices;
 // 2019-11-14 2020.0.0.2 implemented HasValidLocationPoint
 // 2019-11-14 2020.0.0.2 added check for valid LocationPoint to preselected elements
 // 2019-11-14 2020.0.0.2 added report of number of adjustments exported and elements modified
+// 2019-11-14 2020.0.0.2 successfully tested reports and ignoring invalid preselected elements
 //
 [assembly: AssemblyVersion( "2020.0.0.2" )]
 [assembly: AssemblyFileVersion( "2020.0.0.2" )]
