@@ -34,5 +34,10 @@ namespace ElementAdjuster
       Y = p.Y;
       Z = p.Z;
     }
+
+    public XYZ Point
+    {
+      get { return new XYZ( X, Y, Z ); }
+    }
   }
 }
