@@ -44,6 +44,7 @@ using System.Runtime.InteropServices;
 // 2019-11-14 2020.0.0.0 implemented ElementAdjustmentData constructor
 // 2019-11-14 2020.0.0.0 implemented JSON serialization (and de-)
 // 2019-11-14 2020.0.0.0 export individual line entries to json, not entire dictionary
+// 2019-11-14 2020.0.0.0 successful export test
 //
 [assembly: AssemblyVersion( "2020.0.0.0" )]
 [assembly: AssemblyFileVersion( "2020.0.0.0" )]
