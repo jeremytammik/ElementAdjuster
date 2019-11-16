@@ -7,7 +7,7 @@ The goal is to execute minor changes in the model, export and import element cha
 For this purpose, elements and their locations are stored in an external [JSON adjustment data file](#jsondata).
 
 Two copies of an identical model exist.
-Slight adjustments are mode to the locations of certain elements in one of them.
+Slight adjustments are made to the locations of certain elements in one of them.
 These adjustments are to be duplicated in the second copy of the model.
 
 Alternatively, with one single BIM, the current element positions are exported to JSON, [manually edited](#manual) to tweak the element positions, and the modified adjustment file read back in to apply these modifications to the BIM.
