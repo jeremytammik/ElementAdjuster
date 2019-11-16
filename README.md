@@ -10,20 +10,6 @@ Slight adjustments are mode to the locations of certain elements in one of them.
 
 These adjustments are to be duplicated in the second copy of the model.
 
-A JSON file storing specific data for selected elements is generated in the modified model.
-
-We pick an element and click "export info". 
-That creates a new JSON file `C:/tmp/exported_element_info.json` containing the following info about each selected element:
-
-- id
-- unique id
-- x, y, z coordinates
-- direction facing
-- element type
-- host element
-
-The JSON file is human readable and can also be manually updated.
-
 The same add-in implements a command "import info" that retrieves the element and updates its position accordingly.
 
 Simplifications: currently, there is no need to support changes to "direction facing", "element type", "host element" (or id/uid obviously).
@@ -42,6 +28,33 @@ ElementAdjuster implements two external commands:
 - [CmdExport](#CmdExport)
 - [CmdImport](#CmdImport)
 
+![Fixture adjustment](img/fixture_adjustment.png "Fixture adjustment")
+
+
+## JSON Adjustment Data File
+
+A JSON file storing specific data for selected elements is generated in the modified model.
+
+We pick an element and click "export info". 
+That creates a new JSON file `C:/tmp/exported_element_info.json` containing the following info about each selected element:
+
+- id
+- unique id
+- x, y, z coordinates
+- direction facing
+- element type
+- host element
+
+The JSON file is human readable and can easily be manually edited and updated.
+
+
+## Manual Adjustment by Editing the JSON File
+
+Another possible use case that may be much more interesting than modifying a copy of the model:
+
+Generate the JSON adjustment file from the BIM and edit the stored values manually by hand to automatically fix element positions using human-defined changes.
+
+
 ## <a name="CmdExport"></a> CmdExport
 
 CmdExport exports the adjustment data listed above for a set of elements to the hard-coded JSON file path specified above.
@@ -51,6 +64,10 @@ They can be pre-selected before launching the command.
 If no elements have been preselected, the command prompts the user to select them.
 
 Elements that have no valid `LocationPoint` are ignored.
+
+Note that the output file is always appended to.
+In order to remove previously stored adjustments, edit or delete the pre-existing file.
+
 
 ## <a name="CmdImport"></a> CmdImport
 
