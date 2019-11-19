@@ -38,7 +38,7 @@ That creates a new or appends to an existing JSON file `C:/tmp/exported_element_
 
 - id
 - unique id
-- x, y, z coordinates
+- x, y, z coordinates (in integer values in millimetres)
 - direction facing
 - element type
 - host element
