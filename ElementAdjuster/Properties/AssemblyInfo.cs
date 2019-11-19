@@ -51,7 +51,8 @@ using System.Runtime.InteropServices;
 // 2019-11-14 2020.0.0.2 added check for valid LocationPoint to preselected elements
 // 2019-11-14 2020.0.0.2 added report of number of adjustments exported and elements modified
 // 2019-11-14 2020.0.0.2 successfully tested reports and ignoring invalid preselected elements
+// 2019-11-19 2020.0.0.3 implemented and successfully tested location storage in integer millimetres
 //
-[assembly: AssemblyVersion( "2020.0.0.2" )]
-[assembly: AssemblyFileVersion( "2020.0.0.2" )]
+[assembly: AssemblyVersion( "2020.0.0.3" )]
+[assembly: AssemblyFileVersion( "2020.0.0.3" )]
 
