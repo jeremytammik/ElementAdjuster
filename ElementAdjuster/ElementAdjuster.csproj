@@ -57,6 +57,7 @@
     <Compile Include="ElementAdjustmentData.cs" />
     <Compile Include="LocationPointSelectionFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ElementAdjuster.addin" />

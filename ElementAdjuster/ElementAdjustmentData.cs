@@ -8,9 +8,9 @@ namespace ElementAdjuster
   {
     public int Id;
     public string UniqueId;
-    public double X;
-    public double Y;
-    public double Z;
+    public int X;
+    public int Y;
+    public int Z;
     //public double FacingX;
     //public double FacingY;
     //public double FacingZ;
@@ -35,14 +35,24 @@ namespace ElementAdjuster
       Id = e.Id.IntegerValue;
       UniqueId = e.UniqueId;
       XYZ p = ((LocationPoint) loc).Point;
-      X = p.X;
-      Y = p.Y;
-      Z = p.Z;
+      X = Util.FootToMmInt( p.X );
+      Y = Util.FootToMmInt( p.Y );
+      Z = Util.FootToMmInt( p.Z );
     }
 
+    /// <summary>
+    /// Return a point in the Revit database unit, 
+    /// imperial feet.
+    /// </summary>
     public XYZ Point
     {
-      get { return new XYZ( X, Y, Z ); }
+      get
+      {
+        return new XYZ( 
+          Util.MmToFeet( X ), 
+          Util.MmToFeet( Y ), 
+          Util.MmToFeet( Z ) );
+      }
     }
   }
 }
